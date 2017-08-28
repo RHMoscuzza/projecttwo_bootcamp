@@ -1,0 +1,323 @@
+// Music Player
+.musicPlayer {
+	background: $black;
+	display: block;
+}
+.musicWrap {
+	width: 50%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	position: relative;
+}
+.trackbar {
+	width: 50%;
+}
+.trackbar:after {
+    content: "";
+    position: absolute;
+    background-color: #393639;
+    width: inherit;
+    height: 2px;
+    display: block;
+	top: 50%;
+}
+// Podcast
+$browseFont: 14px;
+.solidBack {
+	background: $almostBlack;
+}
+.browse {
+	display: flex;
+	justify-content: space-between;
+	color: $white;
+	text-transform: uppercase;
+}
+.browseEp {
+	width: 55%;
+	font-size: $browseFont;
+}
+.greenLine {
+	width: 45%;
+	font-size: $browseFont;
+}
+.greenLine::after {
+	content: "";
+    background-color: $limeGreenMain;
+    width: 5%;
+    height: 2px;
+    display: block;
+}
+// Gallery
+.podcastGallery {
+	display: flex;
+	max-width: inherit;
+	flex-wrap: wrap;
+	:nth-child(even) {
+		padding-left: 30px;
+	}
+}
+.podcastCellWrap {
+	width: 50%;
+	display: flex;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	.podcastCell--One {
+		background-image: url("../assets/podcast-1.jpg");
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 5%;
+		h1, h4 {
+			padding: 0;
+		}
+		&::before {
+			content: "";
+			width: 100%;
+			height: 20px;
+			background: rgba(255,255,255,0.25);
+			display: block;
+			border-radius: 25px;
+		}
+	}	
+	.podcastCell--Two {
+		background-image: url("../assets/podcast-2.jpg");
+		@extend .podcastCell--One;
+	}
+	.podcastCell--Three {
+		background-image: url("../assets/podcast-3.jpg");
+		@extend .podcastCell--One;
+	}
+	.podcastCell--Four {
+		background-image: url("../assets/podcast-4.jpg");
+		@extend .podcastCell--One;
+	}
+	.podcastCell--Five {
+		background-image: url("../assets/podcast-5.jpg");
+		@extend .podcastCell--One;
+	}
+	.podcastCell--Six {
+		background-image: url("../assets/podcast-6.jpg");
+		@extend .podcastCell--One;
+	}
+}
+.podcastDate {
+	color: $white;
+}
+.loadMore {
+	width: 100%;
+	background: $grey;
+	border: 1px solid $grey;
+	margin: 15px auto;
+	color: #b5b4b5;
+	padding: 15px;
+	cursor: pointer;
+	&:hover {
+		color: $limeGreenMain;
+	}
+}
+// About Us Bios
+.top, .bottom {
+	display: flex;
+	justify-content: space-between;
+	h1 {
+		color: $limeGreenMain;
+	}
+}
+.img-test img {
+	width: 100%;
+}
+.top img {
+	margin-right: 10%;
+}
+.bottom img {
+	margin-left: 10%;
+}
+.aboutUsBio {
+	width: 100%;
+	margin-top: 15%;
+}
+.aboutUsBio::before {
+	content: "";
+	width: 100%;
+	height: 10px;
+	background: #ededed;
+	display: block;
+	border-radius: 25px;
+}
+.top {
+	text-align: right;
+}
+.aboutSocial {
+	margin-bottom: 5%;
+}
+.aboutSocial a {
+	color: $black;
+}
+.aboutSocial a:hover {
+	color: $limeGreenMain;
+}
+.aboutUsBio p {
+	font-family: $roboto;
+}
+// Support
+.supportBackground {
+	background-color: $limeGreenMain;
+	height: 60vh;
+	position: relative;
+}
+$darkGreen: darken($limeGreenMain, 10%);
+.support {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	h1 {
+		color: rgba($darkGreen, .3);
+		position: absolute;
+		font-size: 250px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.supportWrap {
+	text-align: center;
+	width: 50%;
+	margin: initial;
+	color: $white;
+	font-family: $pt;
+	min-height: 325px;
+	max-height: 530px;
+	h2 {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	span {
+		font-weight: bold;
+	}
+	button {
+		border-radius: 25px;
+		background-color: $white;
+		border: 1px solid $white;
+		font-size: 14px;
+		font-family: $poppins;
+		padding: 15px;
+		cursor: pointer;
+		&:hover {
+			color: $limeGreenMain;
+		}
+	}
+}
+// Media Queries    
+// Medium Devices
+@media (max-width : 992px) {
+	// music player
+	.musicWrap {
+		width: 100%;
+	}
+	// about us
+	.aboutUs h3 {
+		text-align: center;
+	}
+	.aboutUs img {
+		margin: 0;
+	}
+	.top, .bottom {
+		flex-wrap: wrap;
+		margin: 0 auto;
+		max-width: 90%;
+		min-width: 10%;
+		text-align: center;
+	}
+	.aboutUsBio {
+		text-align: center;
+	}
+}
+// Small Devices, Tablets
+@media (max-width : 768px) {
+	// music player
+	.trackbar {
+		width: 60%;
+	}
+	// podcasts
+	.browse {
+		max-width: 50%;
+		justify-content: center;
+		margin: 0 auto;
+	}
+	.greenLine::after {
+		width: 15%;
+	}
+	.podcastGallery {
+		:nth-child(even) {
+			padding: 0;
+		}
+	}
+	.podcastCellWrap {
+		max-width: 768px;
+		min-width: 480px;
+		flex-wrap: wrap;
+		margin: auto;
+	}
+	.podcastCell--Four, .podcastCell--Five, .podcastCell--Six {
+		display: none;
+	}
+	// support
+	.supportBackground {
+		height: 50vh;
+	}
+	.support h1 {
+		display: none;
+	}
+	.supportWrap {
+		justify-content: center;
+		align-content: center;
+		margin: 10% auto;
+	}
+}
+// Landscape IPhone 5
+@media (max-width : 568px) {
+	.supportBackground {
+		height: 100vh;
+		margin: auto;
+		justify-content: center;
+		align-content: center;
+	}
+}
+// Extra Small Devices, Phones
+@media (max-width : 480px) {
+	//music player
+	.musicWrap {
+		display: none;
+	}
+	// about us
+	.aboutUs img {
+		margin: 0 auto;
+	}
+	.top, .bottom {
+		max-width: 480px;
+		min-width: 300px;
+		margin: auto;
+	}
+	// podcast
+	.podcastCellWrap {
+		max-width: 480px;
+		min-width: 300px;
+		flex-wrap: wrap;
+		margin: auto;
+	}
+}
+// Extra Extra Small Devices
+@media (max-width : 320px) {
+	.supportBackground {
+		height: 75vh;
+	}
+}
